@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: football-ai-coach-beta
+    runtime: node
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: NODE_ENV
+        value: production
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        value: gpt-5.6-luna
+      - key: VITE_POSTHOG_KEY
+        sync: false
+      - key: VITE_POSTHOG_HOST
+        value: https://us.i.posthog.com

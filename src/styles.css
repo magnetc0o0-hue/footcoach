@@ -2271,3 +2271,530 @@ body {
     transition-duration: .01ms !important;
   }
 }
+
+/* =========================================================
+   V7.3 — Editorial Football UI (Lovable design direction)
+   Warm ivory + matte black + football lime. Functionality from
+   V7.2 is preserved; this layer changes hierarchy and presentation.
+   ========================================================= */
+:root {
+  --bg: #f4f3ee;
+  --surface: #ffffff;
+  --surface-2: #efeee8;
+  --surface-3: #e7e5de;
+  --line: rgba(17,17,17,.09);
+  --line-strong: rgba(17,17,17,.17);
+  --text: #111111;
+  --muted: #6f6f69;
+  --muted-2: #96958e;
+  --lime: #c8f238;
+  --lime-strong: #b7e52b;
+  --lime-ink: #11150b;
+  --green: #4b8f62;
+  --blue: #74746f;
+  --orange: #c79b48;
+  --red: #d66262;
+  --purple: #888680;
+  --shadow: 0 24px 70px rgba(24,24,20,.10);
+  --v5-lime: #c8f238;
+  --v5-blue: #787873;
+  --v5-line: rgba(17,17,17,.09);
+  --v6-blue: #74746f;
+  --v6-cyan: #5f7f6a;
+  --v6-violet: #85837d;
+  --v6-orange: #c79b48;
+  --v6-panel-line: rgba(17,17,17,.10);
+  --v7-mint: #4b8f62;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+html { background: #e8e6df; }
+body {
+  color: var(--text);
+  background: #e8e6df;
+}
+.app-shell {
+  background: var(--bg);
+  box-shadow: 0 24px 72px rgba(25,25,20,.12);
+}
+.app-main { background: var(--bg); }
+.screen-content { padding: 20px 16px 118px; }
+.home-screen-v5,.plan-screen-v5,.progress-screen,.profile-screen,.home-screen {
+  background: transparent !important;
+}
+
+.app-shell h1,.app-shell h2,.app-shell h3,
+.brand strong,.profile-avatar span,.progress-ring strong,
+.weekly-review-top strong,.plan-build-ring-inner strong,
+.complete-screen-v7 h1,.timer-ring-v5 strong {
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif !important;
+}
+.app-shell h1,.app-shell h2,.app-shell h3 { letter-spacing: -.015em; }
+
+/* Core controls */
+.button {
+  min-height: 54px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.button-primary {
+  background: var(--lime) !important;
+  color: var(--lime-ink) !important;
+  box-shadow: none !important;
+}
+.button-primary:hover:not(:disabled) { filter: brightness(.98); box-shadow: none !important; }
+.button-secondary,.button-ghost {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--line-strong);
+}
+.icon-button {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+.eyebrow,.section-kicker { color: #536526; letter-spacing: .18em; }
+
+/* Brand */
+.brand-mark {
+  border-radius: 999px;
+  background: var(--lime);
+  color: var(--lime-ink);
+  box-shadow: none;
+}
+.brand strong { color: var(--text); font-size: 17px; letter-spacing: .035em; }
+.brand span { color: var(--muted); }
+.app-topbar { margin-bottom: 18px; }
+.profile-pill {
+  border-color: var(--line);
+  background: var(--surface);
+  border-radius: 999px;
+  box-shadow: 0 5px 18px rgba(25,25,20,.04);
+}
+.profile-pill > span { border-radius: 999px; background: var(--text); color: var(--lime); }
+.profile-pill strong { color: var(--text); }
+.profile-pill small { color: var(--muted); }
+
+/* Welcome: editorial image-first treatment */
+.landing-screen {
+  color: #fff;
+  padding: 22px 18px 22px;
+  background: #111;
+}
+.landing-screen .brand strong { color: #fff; }
+.landing-screen .brand span { color: rgba(255,255,255,.62); }
+.landing-screen .hero-copy { margin-top: 34px; }
+.landing-screen .eyebrow { color: var(--lime); }
+.hero-copy h1 {
+  margin: 11px 0 14px;
+  max-width: 430px;
+  color: #fff;
+  font-size: clamp(54px, 15vw, 76px);
+  line-height: .82;
+  letter-spacing: -.02em;
+}
+.hero-copy h1 em { color: var(--lime); }
+.hero-copy p { color: rgba(255,255,255,.72); max-width: 360px; font-size: 13px; line-height: 1.55; }
+.landing-glow { display: none; }
+.pitch-preview {
+  min-height: 330px;
+  margin: 24px 0 18px;
+  border-radius: 28px;
+  border: 0;
+  background-image:
+    linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.78)),
+    url("https://images.unsplash.com/photo-1785528469354-aef02432c54f?auto=format&fit=crop&w=1200&q=84");
+  background-position: center 38%;
+  box-shadow: none;
+}
+.pitch-preview:before,.pitch-line,.pitch-circle,.pitch-box,.player-dot,.plan-float-card,.hero-speed-lines { display:none !important; }
+.hero-photo-shade { background: linear-gradient(180deg,rgba(0,0,0,.04),rgba(0,0,0,.78)); }
+.hero-performance-tag {
+  top: auto;
+  bottom: 18px;
+  left: 18px;
+  border: 1px solid rgba(255,255,255,.24);
+  background: rgba(12,12,12,.62);
+  color: var(--lime);
+}
+.landing-proof-row { display:none; }
+.landing-actions { margin-top: auto; }
+.landing-actions .button-ghost { color:#fff; border-color:rgba(255,255,255,.22); background:rgba(255,255,255,.06); }
+.trust-row { color: rgba(255,255,255,.6); }
+
+/* Onboarding: bright editorial form system */
+.onboarding-screen { background: var(--bg); color: var(--text); }
+.flow-header { padding-top: max(18px, env(safe-area-inset-top)); }
+.step-progress { background: #dfddd5; height: 4px; }
+.step-progress span { background: var(--lime); }
+.step-count,.section-intro,.field-label { color: var(--muted); }
+.flow-content { padding-top: 34px; }
+.flow-content h2 { font-size: 46px; line-height: .88; text-transform: uppercase; }
+.flow-footer { background: linear-gradient(180deg,rgba(244,243,238,0),#f4f3ee 30%); }
+.age-input-wrap,.selection-card,.position-card,.goal-card-v3,.mastery-onboarding-card,.segmented-options {
+  border-color: var(--line);
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: none;
+}
+.age-input { color: var(--text); font-family:"Barlow Condensed",sans-serif; }
+.selection-card { min-height: 64px; border-radius: 18px; }
+.selection-card.selected,.position-card.selected {
+  background: #111 !important;
+  border-color: #111 !important;
+  color: #fff !important;
+}
+.selection-card.selected .selection-copy small,.position-card.selected .position-number { color: rgba(255,255,255,.62); }
+.selection-icon { background: #f0efe9; color: #111; }
+.selection-card.selected .selection-icon { background: rgba(255,255,255,.09); color: var(--lime); }
+.position-card { background: #fff; }
+.position-card:before { border-color: rgba(17,17,17,.05); }
+.position-card > svg { color: #77766f; }
+.position-card.selected > svg { color: var(--lime); }
+.selection-check { border-color: rgba(17,17,17,.16); }
+.role-chip-grid button,.secondary-position-row button { background:#fff; color:var(--muted); border-color:var(--line); }
+.role-chip-grid button.selected,.secondary-position-row button.selected { background:#111; color:#fff; border-color:#111; }
+.segmented-options { background:#ebe9e2; }
+.segmented-options button { color:var(--muted); }
+.segmented-options button.selected { background:#111; color:#fff; box-shadow:none; }
+
+/* Home: session-first, then check-in */
+.returning-home-head-v72 {
+  margin: 2px 0 12px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  border-radius: 0;
+}
+.returning-home-head-v72 > div > span { color:#69723e; }
+.returning-home-head-v72 > div > strong { font-size: 14px; color:var(--text); }
+.returning-coach-status-v72 { color:var(--muted); }
+.returning-coach-status-v72 i { background:var(--lime); box-shadow:none; }
+
+.home-command-hero {
+  border-radius: 28px;
+  border: 0;
+  background: #111;
+  box-shadow:none;
+}
+.home-command-photo {
+  filter:saturate(.86) contrast(1.03);
+}
+.home-command-shade { background: linear-gradient(90deg,rgba(0,0,0,.88),rgba(0,0,0,.23)),linear-gradient(0deg,rgba(0,0,0,.58),transparent 62%); }
+.home-command-copy h1 { color:#fff; font-size:48px; }
+.home-command-copy h1 em { color:var(--lime); }
+.home-command-copy p { color:rgba(255,255,255,.7); }
+.home-command-badge { border-color:rgba(255,255,255,.16); background:rgba(17,17,17,.62); color:var(--lime); }
+
+.today-card-v5 {
+  margin-top: 2px;
+  padding: 20px;
+  border-radius: 28px;
+  border: 0;
+  background:
+    radial-gradient(circle at 110% -10%, rgba(200,242,56,.20), transparent 38%),
+    #111 !important;
+  color: #fff;
+  box-shadow: none !important;
+}
+.today-card-v5:after { background:transparent; border-color:rgba(255,255,255,.06); }
+.today-card-v5 h2 { color:#fff; font-size: 43px; line-height:.86; text-transform:uppercase; margin-top:2px; }
+.today-card-v5 > p { color:rgba(255,255,255,.68); }
+.today-card-v5 .section-kicker { color:var(--lime); }
+.today-card-v5 .type-badge { color:#111; background:var(--lime); border-color:var(--lime); }
+.readiness-chip { color:rgba(255,255,255,.72); border-color:rgba(255,255,255,.16); background:rgba(255,255,255,.04); }
+.readiness-chip.readiness-fresh { color:var(--lime); border-color:rgba(200,242,56,.28); }
+.today-coach-logic { background:rgba(255,255,255,.055) !important; border-color:rgba(255,255,255,.08) !important; color:rgba(255,255,255,.72) !important; }
+.today-coach-logic svg,.today-coach-logic small { color:var(--lime) !important; }
+.today-coach-logic span { color:rgba(255,255,255,.76) !important; }
+.today-fact-grid > div { background:rgba(255,255,255,.05); border-color:rgba(255,255,255,.08); }
+.today-fact-grid svg { color:var(--lime); }
+.today-fact-grid small { color:rgba(255,255,255,.48); }
+.today-fact-grid strong { color:#fff; }
+.today-start-v5 { min-height: 60px; font-size: 12px; }
+.adapt-button-v5 { border-color:rgba(255,255,255,.11); background:rgba(255,255,255,.035); color:#fff; }
+.adapt-button-v5 > svg:first-child { color:var(--lime); background:rgba(200,242,56,.08); }
+.adapt-button-v5 small,.adapt-button-v5 > svg:last-child { color:rgba(255,255,255,.55); }
+.today-drill-disclosure { border-color:rgba(255,255,255,.10); }
+.today-drill-disclosure summary { color:rgba(255,255,255,.82); }
+.today-drill-disclosure summary small,.today-drill-disclosure div small,.today-drill-disclosure i { color:rgba(255,255,255,.48); }
+.today-drill-disclosure > div > span { background:rgba(255,255,255,.04); }
+.session-complete-inline { background:rgba(200,242,56,.10); color:var(--lime); }
+
+.daily-checkin-v52,.today-readiness-v5 {
+  margin: 12px 0;
+  border:1px solid var(--line) !important;
+  border-radius:22px;
+  background:#fff !important;
+  box-shadow:none !important;
+  color:var(--text);
+}
+.today-readiness-head > span { color:var(--muted); }
+.checkin-row-v52 { border-color:var(--line) !important; }
+.checkin-row-head span,.checkin-row-head strong { color:var(--text) !important; }
+.checkin-row-head svg { color:#4f5e28 !important; }
+.checkin-options-v52 button {
+  background:#f2f1eb !important;
+  color:#676760 !important;
+  border-color:transparent !important;
+  border-radius:999px !important;
+  box-shadow:none !important;
+}
+.checkin-options-v52 button.selected {
+  background:#111 !important;
+  color:#fff !important;
+  border-color:#111 !important;
+  box-shadow:none !important;
+}
+
+.development-journey-v7,.development-journey-v71,
+.coach-brief-v5,.week-snapshot-v5,.ball-mastery-card,
+.progress-hero-card,.development-level-card,.mastery-progress-card,
+.momentum-card,.focus-card,.history-card,.exercise-development-card-v71,
+.profile-section,.beta-storage-note-v72 {
+  background:#fff !important;
+  color:var(--text) !important;
+  border-color:var(--line) !important;
+  box-shadow:none !important;
+}
+.development-journey-v71::after { display:none; }
+.development-journey-head span,.position-path-v7 > span,.focus-path-v71 > span { color:var(--muted) !important; }
+.development-journey-head strong,.position-path-v7 b,.focus-path-v71 b { color:var(--text); }
+.development-stage-track-v7 > div > i { border-color:var(--line-strong); color:var(--muted); background:#f1f0ea; }
+.development-stage-track-v7 > div.done > i,.development-stage-track-v7 > div.current > i { background:var(--lime); border-color:var(--lime); color:var(--lime-ink); }
+.development-stage-track-v7:before { background:#dedcd4; }
+.position-path-v7 b,.focus-path-v71 b { background:#f1f0ea; border-color:var(--line); }
+.position-path-v7 b.current,.focus-path-v71 b.current { background:#111; color:#fff; border-color:#111; }
+.progression-review-v71 { background:#f4f3ed; border-color:var(--line); color:var(--text); }
+.progression-review-v71 > svg { color:#5c6c31; }
+.progression-review-v71 span { color:var(--muted); }
+.ball-mastery-card:after { display:none; }
+.mastery-card-icon { background:#111 !important; color:var(--lime) !important; }
+.mastery-card-copy p { color:var(--muted); }
+.mastery-play { background:var(--lime); border-color:var(--lime); color:var(--lime-ink); }
+.coach-brief-v5 { grid-template-columns:44px 1fr; }
+.coach-brief-v5-icon { background:#111; color:var(--lime); border-radius:999px; }
+.coach-brief-v5 span { color:#5a682f; }
+.coach-brief-v5 strong { color:var(--text); }
+.coach-brief-v5 p { color:var(--muted); }
+.week-snapshot-track { background:#e5e3dc; }
+.week-snapshot-track span { background:var(--lime); }
+.week-snapshot-head button { color:#536526; }
+.week-load-bars-v6 > div > span { background:#e6e4dd !important; }
+.week-load-bars-v6 > div > span > i { background:#111 !important; }
+.week-load-bars-v6 > div.today > span > i { background:var(--lime) !important; }
+.week-load-bars-v6 small { color:var(--muted) !important; }
+
+/* Plan */
+.section-header h1 { color:var(--text); text-transform:uppercase; font-size:46px !important; line-height:.88; }
+.section-header p { color:var(--muted); }
+.source-pill.ai,.source-pill.safe { color:#4c5a27; background:#eaf4c9; }
+.week-rail-v5 button {
+  background:#fff;
+  color:var(--muted);
+  border-color:var(--line);
+  box-shadow:none;
+}
+.week-rail-v5 button.selected { background:#111; color:#fff; border-color:#111; box-shadow:none; transform:none; }
+.week-rail-v5 button.selected .week-dot-v5 { background:var(--lime); }
+.week-rail-v5 button.today:not(.selected) { border-color:#a9bd65; }
+.plan-focus-v5 {
+  background:#111 !important;
+  color:#fff !important;
+  border:0 !important;
+  border-radius:28px;
+  box-shadow:none !important;
+}
+.plan-focus-v5 h2 { color:#fff; font-size:42px; line-height:.86; text-transform:uppercase; }
+.plan-focus-v5 > p { color:rgba(255,255,255,.68); }
+.plan-focus-v5-top > div > span:first-child { color:rgba(255,255,255,.50); }
+.plan-focus-v5-icon { color:var(--lime); background:rgba(200,242,56,.08); border-color:rgba(200,242,56,.16); }
+.plan-focus-v5 .type-badge { background:var(--lime); color:#111; border-color:var(--lime); }
+.plan-facts-v5 > div { border-color:rgba(255,255,255,.08); background:rgba(255,255,255,.04); }
+.plan-facts-v5 svg { color:var(--lime); }
+.plan-facts-v5 small { color:rgba(255,255,255,.44); }
+.plan-facts-v5 strong { color:#fff; }
+.plan-rationale-v5 { border-color:rgba(255,255,255,.10); color:rgba(255,255,255,.62); }
+.plan-rationale-v5 svg { color:var(--lime); }
+.session-mix-card,.workout-blocks-preview-v7.compact,.plan-progress-review-v71,.move-session-button-v71 { background:rgba(255,255,255,.045) !important; border-color:rgba(255,255,255,.09) !important; box-shadow:none !important; }
+.session-mix-head > span,.session-mix-labels > span,.session-mix-labels small,.workout-blocks-preview-v7 small,.plan-progress-review-v71 small,.move-session-button-v71 small { color:rgba(255,255,255,.48) !important; }
+.session-mix-head > strong,.workout-blocks-preview-v7 strong,.plan-progress-review-v71 strong,.move-session-button-v71 strong { color:#fff !important; }
+.session-mix-bars .mix-technique,.session-mix-bars .mix-game_realistic,.session-mix-bars .mix-physical { background:var(--lime) !important; box-shadow:none; }
+.workout-blocks-preview-v7 > div > i { background:var(--lime) !important; }
+.move-session-button-v71 > svg:first-child { color:var(--lime); }
+.session-disclosure-v5,.week-mastery-mini { background:#fff !important; border-color:var(--line) !important; color:var(--text) !important; }
+.session-disclosure-v5 summary,.plan-exercise-row strong,.week-mastery-mini strong { color:var(--text) !important; }
+.plan-exercise-row,.session-disclosure-v5 * { border-color:var(--line); }
+.plan-exercise-row small,.exercise-progression-inline-v71,.week-mastery-mini small { color:var(--muted) !important; }
+.week-mastery-mini span { color:#59652f; }
+
+/* Progress */
+.progress-screen .section-header,.profile-screen .section-header { margin-bottom:16px; }
+.weekly-review-v7 {
+  background:#111 !important;
+  color:#fff !important;
+  border:0 !important;
+  border-radius:28px;
+}
+.weekly-review-top strong { color:#fff; font-size:30px; line-height:.9; }
+.weekly-review-top > svg { color:var(--lime); }
+.weekly-review-v7 > p { color:rgba(255,255,255,.66); }
+.weekly-review-metrics span { background:rgba(255,255,255,.05); border-color:rgba(255,255,255,.08); }
+.weekly-review-metrics strong { color:#fff; }
+.weekly-review-metrics small { color:rgba(255,255,255,.48); }
+.progress-hero-card { background:#fff !important; }
+.progress-ring { background:conic-gradient(#111 var(--progress), #e5e3dc 0); }
+.progress-ring:before { background:#fff; }
+.stat-grid .stat-card,.stat-card { background:#fff !important; border-color:var(--line) !important; }
+.stat-card strong,.focus-card strong,.history-card strong { color:var(--text); }
+.focus-track { background:#e5e3dc !important; }
+.focus-track span { background:#111 !important; box-shadow:none !important; }
+.history-row-v7,.history-row { border-color:var(--line) !important; }
+.training-type-badge { backdrop-filter:none; }
+.training-type-badge.mode-technique,.training-type-badge.mode-game_realistic,.training-type-badge.mode-physical,.training-type-badge.mode-recovery,.training-type-badge.mode-activation { color:#41413d; border-color:var(--line); background:#f0efe9; }
+.exercise-development-icon-v71 { background:#111; color:var(--lime); }
+.exercise-development-row-v71 { border-color:var(--line); }
+.exercise-development-row-v71 > span strong { color:#536526; }
+
+/* Profile */
+.profile-hero {
+  background:#111 !important;
+  border:0 !important;
+  border-radius:28px;
+  box-shadow:none;
+  color:#fff;
+}
+.profile-avatar { border-radius:999px; background:var(--lime); color:#111; box-shadow:none; }
+.profile-avatar i { border-color:#111; background:var(--lime); }
+.profile-hero h2 { color:#fff; font-size:36px; }
+.profile-hero p { color:rgba(255,255,255,.62); }
+.profile-section { border-radius:20px; }
+.profile-section-head strong,.profile-detail-grid strong,.profile-schedule-row strong { color:var(--text); }
+.profile-detail-grid > span,.profile-place-list > span { background:#f3f2ec; border-color:var(--line); }
+.profile-inline-copy,.profile-schedule-row span,.profile-detail-grid small,.profile-place-list small { color:var(--muted); }
+.profile-schedule-row { border-color:var(--line); }
+.schedule-dot.personal { background:var(--lime) !important; }
+.schedule-dot.team { background:#111 !important; }
+.schedule-dot.match { background:#c79b48 !important; }
+.plan-meta-note { color:var(--muted); }
+.plan-meta-note svg,.beta-storage-note-v72 > svg { color:#536526; }
+.beta-storage-note-v72 span { color:var(--muted); }
+.text-danger-button { color:#a84f4f; }
+
+/* Adapt/move sheets */
+.adapt-overlay { background:rgba(10,10,9,.48); }
+.adapt-sheet {
+  background:#f8f7f2 !important;
+  color:var(--text) !important;
+  border-color:var(--line) !important;
+  box-shadow:0 -18px 70px rgba(0,0,0,.18);
+}
+.adapt-sheet-handle { background:#d3d1c9 !important; }
+.adapt-sheet-header,.adapt-sheet-footer { border-color:var(--line) !important; background:#f8f7f2 !important; }
+.adapt-sheet-header strong,.adapt-step h2 { color:var(--text) !important; }
+.adapt-sheet-header span,.adapt-step p,.adapt-constraint-note { color:var(--muted) !important; }
+.move-target-list-v71 button { background:#fff; color:var(--text); border-color:var(--line); }
+.move-target-list-v71 button small { background:#111; color:var(--lime); }
+.move-target-list-v71 button em,.move-target-list-v71 button svg { color:var(--muted); }
+
+/* Bottom nav */
+.bottom-nav,.bottom-nav-v3 {
+  position:absolute;
+  height:86px;
+  background:rgba(255,255,255,.96) !important;
+  border-top:1px solid var(--line) !important;
+  box-shadow:0 -12px 38px rgba(25,25,20,.07) !important;
+  backdrop-filter:blur(20px);
+}
+.bottom-nav button { color:#85847e; }
+.bottom-nav button.active { color:#111; }
+.bottom-nav button.active svg { color:#111; }
+.bottom-nav button.active:before,.bottom-nav button.active:after { display:none !important; }
+.train-nav-button > span {
+  width:50px;
+  height:50px;
+  border-radius:999px;
+  background:#111;
+  color:var(--lime);
+  border:5px solid #fff;
+  box-shadow:0 8px 22px rgba(0,0,0,.12);
+}
+.train-nav-button small { color:#111; }
+
+/* Loading */
+.loading-screen { background:var(--bg) !important; color:var(--text) !important; }
+.loading-copy p,.loading-footnote { color:var(--muted) !important; }
+.plan-build-track { stroke:#dedcd4; }
+.plan-build-value { stroke:#111; filter:none; }
+.plan-build-orbit .plan-build-ring-inner,.plan-build-ring-inner { background:#fff !important; border-color:var(--line) !important; box-shadow:none !important; }
+.loading-status-v5 > div > span { background:#fff; border-color:var(--line); color:var(--muted); }
+.loading-status-v5 > div.done > span { background:#111; border-color:#111; color:var(--lime); }
+.loading-status-v5 strong,.loading-status-v5 > div.done strong { color:var(--muted); }
+
+/* Workout remains deliberately dark and focused */
+.workout-mode,.workout-shell {
+  --bg:#101010;
+  --surface:#171717;
+  --surface-2:#1f1f1f;
+  --surface-3:#262626;
+  --line:rgba(255,255,255,.09);
+  --line-strong:rgba(255,255,255,.17);
+  --text:#f7f7f3;
+  --muted:#a7a79f;
+  --muted-2:#73736d;
+  --lime:#c8f238;
+  --lime-strong:#b7e52b;
+  --lime-ink:#11150b;
+  --v5-lime:#c8f238;
+  --v6-blue:#c8f238;
+  --v6-cyan:#c8f238;
+  background:#101010 !important;
+  color:#f7f7f3;
+}
+.workout-shell { background:radial-gradient(circle at 50% 27%,rgba(200,242,56,.075),transparent 19rem),#101010 !important; }
+.workout-intro { background-image:linear-gradient(180deg,rgba(10,10,10,.56),#101010 48%),url("https://images.unsplash.com/photo-1785528469354-aef02432c54f?auto=format&fit=crop&w=1200&q=78") !important; }
+.workout-intro-v7 .workout-intro-hero { background:rgba(17,17,17,.84); border-color:rgba(255,255,255,.10); }
+.workout-header .icon-button { background:rgba(255,255,255,.045); color:#fff; border-color:rgba(255,255,255,.11); }
+.workout-progress-line { background:rgba(255,255,255,.08); }
+.workout-progress-line span,.workout-block-rail-v7 i.active { background:var(--lime); box-shadow:none; }
+.workout-block-rail-v7 i.done { background:rgba(200,242,56,.45); }
+.timer-value-v5 { stroke:var(--lime); filter:none; }
+.timer-ring-v5.rest .timer-value-v5 { stroke:#fff; filter:none; }
+.timer-ring-v5 strong { color:#fff; }
+.workout-tip,.workout-tip-v7,.progression-cue-v7,.block-transition-v7,.live-progression-chip-v71,.coach-adjustment-preview-v7 { background:rgba(255,255,255,.045); border-color:rgba(255,255,255,.09); color:#fff; }
+.progression-cue-v7 span,.block-transition-v7 small,.live-progression-chip-v71,.coach-adjustment-preview-v7 span { color:var(--lime); }
+.progression-cue-v7 strong,.block-transition-v7 strong,.coach-adjustment-preview-v7 strong { color:#fff; }
+.workout-action,.timer-actions .button-primary { background:var(--lime) !important; color:#111 !important; }
+.workout-list,.feedback-loop-v7 { background:rgba(255,255,255,.035) !important; border-color:rgba(255,255,255,.09) !important; }
+.feedback-row-v7 button { background:rgba(255,255,255,.04); border-color:rgba(255,255,255,.09); color:#aaa; }
+.feedback-row-v7 button.selected { background:var(--lime); border-color:var(--lime); color:#111; box-shadow:none; }
+.feedback-row-v7 > div:first-child span { color:var(--lime); }
+.complete-screen-v7 { background:radial-gradient(circle at 50% 25%,rgba(200,242,56,.08),transparent 18rem),#101010 !important; color:#fff; }
+.complete-screen-v7 .button-secondary { color:#fff; border-color:rgba(255,255,255,.15); background:rgba(255,255,255,.04); }
+
+.connectivity-banner { background:#161616; color:#e9e5d5; border-color:rgba(200,242,56,.18); }
+.connectivity-banner svg { color:var(--lime); }
+.connectivity-banner strong { color:#fff; }
+
+@media (max-width:390px) {
+  .screen-content { padding-left:14px; padding-right:14px; }
+  .today-card-v5 h2 { font-size:39px; }
+  .flow-content h2 { font-size:42px; }
+  .hero-copy h1 { font-size:56px; }
+}
+
+@media (max-width:340px) {
+  .screen-content { padding-left:12px; padding-right:12px; }
+  .today-card-v5 { padding:16px; border-radius:24px; }
+  .today-card-v5 h2 { font-size:35px; }
+  .today-fact-grid { gap:5px; }
+  .today-fact-grid > div { padding:7px; }
+  .hero-copy h1 { font-size:50px; }
+  .pitch-preview { min-height:270px; }
+}

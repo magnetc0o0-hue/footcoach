@@ -155,9 +155,9 @@ function Landing({ onStart, onDemo, demoLoading, error, onDismissError }) {
       <header className="landing-header"><Logo /></header>
 
       <section className="hero-copy">
-        <div className="eyebrow"><Icon name="spark" size={15} /> YOUR FOOTBALL DEVELOPMENT SYSTEM</div>
-        <h1>Train with<br/><em>a purpose.</em></h1>
-        <p>A personalised week built around your position, goals, team sessions and match day — with a technical habit designed to compound over time.</p>
+        <div className="eyebrow"><Icon name="spark" size={15} /> BUILT AROUND YOUR REAL FOOTBALL WEEK</div>
+        <h1>Your week.<br/>Your game.<br/><em>Your coach.</em></h1>
+        <p>Personalised football training that fits your position, team sessions, match day and real life — then adapts as you improve.</p>
       </section>
 
       <div className="pitch-preview" aria-hidden="true">
@@ -186,7 +186,7 @@ function Landing({ onStart, onDemo, demoLoading, error, onDismissError }) {
 
       <div className="landing-actions">
         <ErrorBanner onDismiss={onDismissError}>{error}</ErrorBanner>
-        <Button className="button-block button-large" onClick={onStart}>Start Free</Button>
+        <Button className="button-block button-large" onClick={onStart}>Build My Plan</Button>
         <Button className="button-block" variant="ghost" icon="play" loading={demoLoading} onClick={onDemo}>Try a Demo Plan</Button>
         <div className="trust-row">
           <span><Icon name="shield" size={14} /> No account required</span>
@@ -774,6 +774,8 @@ function HomeScreen({ profile, plan, sessions, onStartWorkout, onOpenPlan, check
         </section>
       )}
 
+      <TodayCard day={todayPlan} profile={profile} readiness={readiness} checkIn={checkIn} startLoading={startLoading} onStart={() => onStartWorkout("main")} onAdapt={onAdapt} completedToday={completedToday} />
+
       <section className="today-readiness-v5 daily-checkin-v52">
         <div className="today-readiness-head">
           <div><span className="section-kicker">DAILY CHECK-IN</span><strong>Match the plan to your body and day.</strong></div>
@@ -793,7 +795,6 @@ function HomeScreen({ profile, plan, sessions, onStartWorkout, onOpenPlan, check
         </div>
       </section>
 
-      <TodayCard day={todayPlan} profile={profile} readiness={readiness} checkIn={checkIn} startLoading={startLoading} onStart={() => onStartWorkout("main")} onAdapt={onAdapt} completedToday={completedToday} />
 
       <DevelopmentJourney progression={plan.progression} position={profile.position} compact />
 

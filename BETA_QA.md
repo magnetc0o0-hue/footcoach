@@ -1,4 +1,4 @@
-# Closed Beta QA — V7.2
+# Closed Beta QA — V7.3 Editorial UI
 
 Run this checklist on the exact deployed build before inviting testers. A beta is ready only when every **P0** item passes.
 
@@ -15,7 +15,7 @@ Run this checklist on the exact deployed build before inviting testers. A beta i
 
 Test once with an OpenAI key and once without one.
 
-- [ ] Landing → Start Free opens onboarding.
+- [ ] Landing → Build My Plan opens onboarding.
 - [ ] All onboarding controls remain usable at 320, 360/375, 390 and 430px widths.
 - [ ] Onboarding creates a seven-day plan.
 - [ ] No Turkish or other unexpected-language coaching copy appears.

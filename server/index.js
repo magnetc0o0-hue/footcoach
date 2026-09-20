@@ -56,7 +56,7 @@ setInterval(() => {
 
 app.get("/api/health", (_req, res) => {
   res.setHeader("Cache-Control", "no-store");
-  res.json({ ok: true, aiConfigured: Boolean(OPENAI_API_KEY), model: OPENAI_MODEL, version: "7.2-beta" });
+  res.json({ ok: true, aiConfigured: Boolean(OPENAI_API_KEY), model: OPENAI_MODEL, version: "7.3-ui-beta" });
 });
 
 app.post("/api/generate-plan", rateLimitCoach, async (req, res) => {
